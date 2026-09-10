@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS Refresher — Task 0</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Task 0 — JavaScript Refresher</h1>
+  <p>Solutions for all topics + final task. Results are printed below and in the console (F12).</p>
+</header>
+
+<main>
+
+<section id="task1">
+  <h2>1. Variables and Data Types</h2>
+  <pre id="out1"></pre>
+  <div class="notes">
+    let can be reassigned, const cannot — but if a const holds an object or array, its contents can still be changed, only the reference itself is locked. typeof null returns "object", which is a long-standing bug in JS since null is not actually an object. The primitive types in JS are string, number, boolean, undefined, null, symbol and bigint.
+  </div>
+</section>
+
+<section id="task2">
+  <h2>2. Arrays</h2>
+  <pre id="out2"></pre>
+  <div class="notes">
+    map, filter, find, reduce and includes are all non-mutating array methods — each one returns a new value (a new array, a single item, or a number) instead of changing the original array. That's why the numbers array stays [3, 7, 2, 10, 5] after all the operations.
+  </div>
+</section>
+
+<section id="task3">
+  <h2>3. Arrays of Objects</h2>
+  <pre id="out3"></pre>
+  <div class="notes">
+    The passing threshold wasn't specified in the task, so grade 60 or higher was assumed. reduce is used twice here: once to find the top student by comparing pairs, and once to calculate the average by summing then dividing — a common pattern for collapsing an array into a single value.
+  </div>
+</section>
+
+<section id="task4">
+  <h2>4. Objects</h2>
+  <pre id="out4"></pre>
+  <div class="notes">
+    Direct property access, like user.age = 23 or delete user.address.street, mutates the object in place. Destructuring just reads values into new variables and does not change the object at all. Renaming a variable during destructuring and reaching into nested objects both follow the same shape-matching rule as regular object literals.
+  </div>
+</section>
+
+<section id="task5">
+  <h2>5. Values and References</h2>
+  <pre id="out5"></pre>
+  <div class="notes">
+    Objects are assigned by reference, so copy and original point to the same object in memory — changing one is visible through the other. Spreading an object creates a new top-level object, so primitive fields like score are copied independently. But spread only copies the first level: a nested object like address is still a reference to the same object, so changing its city through the copy changes the original too. To copy deeply, use structuredClone or spread the nested object manually.
+  </div>
+</section>
+
+<section id="task6">
+  <h2>6. Functions</h2>
+  <pre id="out6"></pre>
+  <div class="notes">
+    A function declaration is hoisted, so it can technically be called before it appears in the file. An arrow function is just a value assigned to a variable — it isn't hoisted, and it doesn't have its own this or arguments, which starts to matter once we get to React components and callbacks.
+  </div>
+</section>
+
+<section id="task7">
+  <h2>7. Functions as Values</h2>
+  <pre id="out7"></pre>
+  <div class="notes">
+    Functions in JS are first-class values: they can be stored in variables, passed as arguments, and returned from other functions. Writing "add" refers to the function itself, so it can be passed around and called later. Writing "add()" calls the function immediately and gives you the result of running it.
+  </div>
+</section>
+
+<section id="task8">
+  <h2>8. Scope</h2>
+  <pre id="out8"></pre>
+  <div class="notes">
+    Global scope means a variable is available throughout the whole file or program. Function scope means a variable is only visible inside the function where it was declared, which is how var behaves. Block scope means a variable is only visible inside its own curly-brace block, which is how let and const behave. var also ignores blocks entirely and gets hoisted, while let and const stay in a "temporal dead zone" until the line where they're declared.
+  </div>
+</section>
+
+<section id="task9">
+  <h2>9. Closure</h2>
+  <pre id="out9"></pre>
+  <div class="notes">
+    The inner function remembers the scope it was created in, even after the outer function has already finished running. That's a closure: the count variable isn't removed from memory as long as the inner function still holds onto it.
+  </div>
+</section>
+
+<section id="task10">
+  <h2>10. Destructuring, Spread and Rest</h2>
+  <pre id="out10"></pre>
+  <div class="notes">
+    Spread unpacks the elements of an array or object outward, which is useful when building a new array or object or when passing arguments. Rest does the opposite — it gathers an arbitrary number of arguments or elements into a single array, which is used in function parameters or during destructuring.
+  </div>
+</section>
+
+<section id="task11">
+  <h2>11. Optional Chaining and Nullish Coalescing</h2>
+  <pre id="out11"></pre>
+  <div class="notes">
+    Without optional chaining, accessing a property like city on a missing address throws a TypeError. Optional chaining simply returns undefined instead of throwing. The || operator triggers on any falsy value, including 0, an empty string and false, so it can replace values you actually wanted to keep. The ?? operator only triggers on null or undefined, which makes it safer when zero or an empty string are valid values.
+  </div>
+</section>
+
+<section id="taskFinal">
+  <h2>Final Task — Students Report</h2>
+  <pre id="outFinal"></pre>
+  <div class="notes">
+    Every helper function here — getAverage, getStudentAverage, getPassedStudents and so on — is a small pure function that takes data in and returns a new value without mutating the original students array. The final report is built with map, producing a brand-new array of objects with id, name, average and passed, following the same non-mutating pattern used throughout the earlier tasks.
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
