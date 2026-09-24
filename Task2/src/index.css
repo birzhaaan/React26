@@ -1,0 +1,132 @@
+:root {
+  --paper: #f4f8f9;
+  --surface: #ffffff;
+  --ink: #15242b;
+  --muted: #5b6d75;
+  --line: #d6e2e6;
+  --sky: #0089a8;
+  --gold: #f2b705;
+
+  --font-display: 'Unbounded', 'Segoe UI', sans-serif;
+  --font-body: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--sky);
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  align-items: center;
+  gap: 48px;
+  padding: 80px 0 72px;
+}
+
+.hero-photo {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--surface);
+  box-shadow: 0 0 0 4px var(--gold);
+}
+
+.hero-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+}
+
+/* ---------- sections ---------- */
+
+.section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.section-body {
+  margin: 0;
+  max-width: 62ch;
+}
+
+.section-body p {
+  margin: 0 0 14px;
+}
+
+/* ---------- contacts ---------- */
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+.contacts dt {
+  color: var(--muted);
+}
+
+.contacts dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 48px 0;
+    text-align: center;
+  }
+
+  .hero-photo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
