@@ -34,7 +34,7 @@ main {
   padding: 0 24px 64px;
 }
 
-/* ---------- hero ---------- */
+/*hero*/
 
 .hero {
   display: grid;
@@ -61,7 +61,7 @@ main {
   line-height: 1.05;
 }
 
-/* ---------- sections ---------- */
+/*sections*/
 
 .section {
   display: grid;
@@ -87,7 +87,7 @@ main {
   margin: 0 0 14px;
 }
 
-/* ---------- contacts ---------- */
+/*contacts*/
 
 .contact-row {
   display: grid;
@@ -109,7 +109,7 @@ main {
   font-weight: 500;
 }
 
-/* ---------- mobile ---------- */
+/*mobile  */
 
 @media (max-width: 720px) {
   .hero {
