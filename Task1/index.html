@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Async Tasks</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Task Runner</h1>
+      <p class="subtitle">JavaScript runtime and async homework</p>
+    </header>
+
+    <section class="controls">
+      <button id="run-all">Run All Tasks</button>
+      <button id="run-sequential">Run Sequential</button>
+      <button id="run-concurrent">Run Concurrent</button>
+      <button id="reset-all" class="secondary">Reset All</button>
+    </section>
+
+    <p id="summary" class="summary">Press a button to start.</p>
+
+    <section id="task-list" class="task-list"></section>
+
+    <section class="panel">
+      <h2>Sequential vs concurrent</h2>
+      <p>Sequential: <strong id="seq-time">not measured</strong></p>
+      <p>Concurrent: <strong id="conc-time">not measured</strong></p>
+    </section>
+
+    <section class="panel">
+      <h2>Event loop demo</h2>
+      <button id="run-demo">Run Event Loop Demo</button>
+      <pre id="demo-log"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
