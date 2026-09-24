@@ -42,7 +42,7 @@ h2 {
   color: var(--muted);
 }
 
-/* ---------- buttons ---------- */
+/*buttons*/
 
 button {
   font: inherit;
@@ -84,7 +84,7 @@ button.secondary {
   font-weight: 600;
 }
 
-/* ---------- task list ---------- */
+/* task list  */
 
 .task-list {
   background: var(--surface);
