@@ -276,6 +276,13 @@ function log(text) {
 }
 
 function runEventLoopDemo() {
+  Promise.resolve().then(function(){
+    log("Promise Test 1");
+    Promise.resolve().then(function(){
+      log("Promise Test 2");
+    });
+  });
+  console.log("Load Posts")
   document.getElementById("demo-log").textContent = "";
 
   log("script start");

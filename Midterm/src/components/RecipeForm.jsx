@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createRecipe } from "../api/recipesApi";
+import { createRecipe } from "../services/service";
 
 const CATEGORIES = ["breakfast", "lunch", "dinner", "dessert", "snack"];
 

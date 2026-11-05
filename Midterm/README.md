@@ -53,4 +53,4 @@ npm run dev
 
 ## Deployment
 
-Deployed on Vercel: [link]
+Deployed on Github:https://birzhaaan.github.io/React26/Midterm/?classId=dcaf95e7-bb53-4708-8070-8c211160fabb&assignmentId=44b0884c-1197-4b9e-8acd-1ce0ffe9b349&submissionId=6acf7db4-79ab-9562-431e-6b9fe5c27d8d 

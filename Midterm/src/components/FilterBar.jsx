@@ -1,4 +1,6 @@
-const CATEGORIES = ["", "breakfast", "lunch", "dinner", "dessert", "snack"];
+import { fetchFilterOptions } from "../services/service";
+import { useFetch } from "../hooks/useFetch";
+
 const SORT_OPTIONS = [
   { value: "", label: "Default" },
   { value: "title-asc", label: "Title A-Z" },
@@ -9,13 +11,56 @@ const SORT_OPTIONS = [
   { value: "servings-desc", label: "Servings: High to Low" },
 ];
 
-export default function FilterBar({ category, onCategoryChange, sortBy, onSortChange }) {
+const TIME_OPTIONS = [
+  { value: "", label: "Any time" },
+  { value: "15", label: "Up to 15 min" },
+  { value: "30", label: "Up to 30 min" },
+  { value: "60", label: "Up to 1 hour" },
+];
+
+function capitalize(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+export default function FilterBar({
+  category,
+  onCategoryChange,
+  cuisine,
+  onCuisineChange,
+  maxTime,
+  onMaxTimeChange,
+  sortBy,
+  onSortChange,
+}) {
+  const { data } = useFetch(() => fetchFilterOptions(), []);
+
+  const categories = data?.categories ?? [];
+  const cuisines = data?.cuisines ?? [];
+
   return (
     <div className="filter-bar">
       <select value={category} onChange={(e) => onCategoryChange(e.target.value)}>
-        {CATEGORIES.map((cat) => (
+        <option value="">All Categories</option>
+        {categories.map((cat) => (
           <option key={cat} value={cat}>
-            {cat === "" ? "All Categories" : cat.charAt(0).toUpperCase() + cat.slice(1)}
+            {capitalize(cat)}
+          </option>
+        ))}
+      </select>
+
+      <select value={cuisine} onChange={(e) => onCuisineChange(e.target.value)}>
+        <option value="">All Cuisines</option>
+        {cuisines.map((cui) => (
+          <option key={cui} value={cui}>
+            {capitalize(cui)}
+          </option>
+        ))}
+      </select>
+
+      <select value={maxTime} onChange={(e) => onMaxTimeChange(e.target.value)}>
+        {TIME_OPTIONS.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
           </option>
         ))}
       </select>

@@ -1,6 +1,8 @@
-export default function RecipeCard({ recipe, onSelect }) {
+import { Link } from "react-router";
+
+export default function RecipeCard({ recipe }) {
   return (
-    <div className="recipe-card" onClick={() => onSelect(recipe.id)}>
+    <Link to={`/recipes/${recipe.id}`} className="recipe-card">
       <div className="recipe-card-header">
         <h3>{recipe.title}</h3>
         <span className="recipe-badge">{recipe.category}</span>
@@ -23,6 +25,6 @@ export default function RecipeCard({ recipe, onSelect }) {
         {recipe.ingredients.slice(0, 3).join(", ")}
         {recipe.ingredients.length > 3 && "..."}
       </div>
-    </div>
+    </Link>
   );
 }
