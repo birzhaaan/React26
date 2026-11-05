@@ -2,45 +2,64 @@
 
 A React single-page application for browsing, searching, and adding recipes.
 
-Built as a midterm project for the KBTU React course (Fall 2026).
+Built for the KBTU React course (Fall 2026) — started as a midterm project,
+extended with React Router, nested routes, dynamic URLs and lazy loading.
+
+**Live demo:** https://birzhaaan.github.io/React26/Midterm/
+
+## Routes
+
+| Route | Page |
+|---|---|
+| `/` | Home |
+| `/about` | About |
+| `/recipes` | Recipe list |
+| `/recipes/:id` | Recipe details |
+| `/dashboard` | Statistics |
+| `/login` | Login placeholder |
+| `*` | Not found |
 
 ## Features
 
-- Browse 105 recipes across 5 categories (breakfast, lunch, dinner, dessert, snack)
-- Search by title, cuisine, or ingredient
-- Filter by category
-- Sort by title, cooking time, or servings
-- Paginated list view with 12 items per page
-- Detail view for each recipe with ingredients and instructions
-- Add new recipes via a controlled form (saved to localStorage)
-- Loading, error, empty, and success states
-- Responsive design
+- 105 built-in recipes across 5 categories and 22 cuisines
+- Search by title, cuisine or ingredient
+- Three filters: category, cuisine, maximum cooking time
+- Six sorting options
+- Pagination, 12 recipes per page
+- All list state lives in the URL via `useSearchParams`, so filtered views
+  can be shared, bookmarked and survive a refresh
+- Detail view fetched by ID with eight fields per recipe
+- Dashboard with five statistics, three breakdowns and a category filter
+  that recalculates everything
+- Add new recipes through a controlled form, persisted to local storage
+- Loading, error, empty and not-found states everywhere
+- Five pages loaded lazily through `React.lazy` and `Suspense`
+- Responsive layout
 
 ## Tech Stack
 
-- React 19 (Vite)
-- Simulated async API with Promises, delays, and localStorage
-- CSS (no external UI libraries)
+- React 19 + Vite
+- React Router 8
+- Simulated async API: promises, randomised delays, local storage
+- Hand-written CSS, no UI libraries
 
 ## Project Structure
 
 ```
 src/
-├── api/
-│   └── recipesApi.js        # Simulated async API
-├── components/
-│   ├── SearchBar.jsx         # Search input
-│   ├── FilterBar.jsx         # Category and sort selects
-│   ├── RecipeCard.jsx        # Recipe card in list
-│   ├── RecipeList.jsx        # Grid of recipe cards
-│   ├── RecipeDetail.jsx      # Full recipe view
-│   ├── RecipeForm.jsx        # Add new recipe form
-│   ├── Pagination.jsx        # Page navigation
-│   └── StatusMessage.jsx     # Loading/error/empty states
+├── assets/            # images
+├── components/        # NavBar, RecipeCard, FilterBar, Pagination, ...
 ├── data/
-│   └── recipes.json          # 105 initial recipes
-├── App.jsx
-├── App.css
+│   └── recipes.json   # 105 initial recipes
+├── hooks/
+│   └── useFetch.js    # async state + stale-response guard
+├── layouts/
+│   └── RootLayout.jsx # NavBar + Outlet + footer
+├── pages/             # one file per route
+├── services/
+│   └── service.js     # all API calls
+├── styles/
+├── App.jsx            # routing only
 └── main.jsx
 ```
 
@@ -53,4 +72,10 @@ npm run dev
 
 ## Deployment
 
-Deployed on Github:https://birzhaaan.github.io/React26/Midterm/?classId=dcaf95e7-bb53-4708-8070-8c211160fabb&assignmentId=44b0884c-1197-4b9e-8acd-1ce0ffe9b349&submissionId=6acf7db4-79ab-9562-431e-6b9fe5c27d8d 
+```bash
+npm run deploy
+```
+
+Builds the project and publishes `dist` to the `gh-pages` branch under the
+`Midterm` folder. The app uses `HashRouter` so that direct links and page
+refreshes work on GitHub Pages static hosting.
