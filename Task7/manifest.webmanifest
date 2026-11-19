@@ -1,0 +1,32 @@
+{
+  "id": "/React26/Task7/",
+  "name": "Recipe Finder",
+  "short_name": "Recipes",
+  "description": "Browse, search and save recipes. Works offline.",
+  "start_url": "/React26/Task7/",
+  "scope": "/React26/Task7/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#111111",
+  "background_color": "#fafafa",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

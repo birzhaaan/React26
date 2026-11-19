@@ -1,0 +1,1 @@
+import{l as e,u as t}from"./index-DtzNOQjo.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`notfound-page`,children:[(0,n.jsx)(`h1`,{children:`404`}),(0,n.jsx)(`p`,{className:`lead`,children:`This page does not exist.`}),(0,n.jsx)(t,{to:`/`,className:`btn-primary`,children:`Back to Home`})]})}export{r as default};
