@@ -1,4 +1,4 @@
-const VERSION = "7f9af7ef";
+const VERSION = "e90bc418";
 const BASE = "/React26/Task7/";
 const PRECACHE_URLS = [
   "/React26/Task7/assets/AboutPage-C_pNCfE0.js",
