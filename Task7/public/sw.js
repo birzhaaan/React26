@@ -86,6 +86,9 @@ async function handleNavigation(request) {
   try {
     return await fetch(request);
   } catch {
+    const exact = await caches.match(request);
+    if (exact) return exact;
+
     const shell = await caches.match(APP_SHELL_URL);
     if (shell) return shell;
 
