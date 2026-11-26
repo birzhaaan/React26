@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{n as t}from"./lib-DrOSq3dy.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`notfound-page`,children:[(0,n.jsx)(`h1`,{children:`404`}),(0,n.jsx)(`p`,{className:`lead`,children:`This page does not exist.`}),(0,n.jsx)(t,{to:`/`,className:`btn-primary`,children:`Back to Home`})]})}export{r as default};
